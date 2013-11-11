@@ -10,7 +10,11 @@ class ReportTemplate < ActiveRecord::Base
   
   def serialization_params
     value = read_attribute :serialization_params
-    value.nil? ? {} : Marshal.load(value)
+    begin
+      value.nil? ? {} : Marshal.load(value)
+    rescue TypeError
+      
+    end
   end
   
 end
