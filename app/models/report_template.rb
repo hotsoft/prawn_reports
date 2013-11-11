@@ -1,3 +1,5 @@
+require 'yaml'
+
 class ReportTemplate < ActiveRecord::Base
   belongs_to :ac_filter_def
   
@@ -11,7 +13,7 @@ class ReportTemplate < ActiveRecord::Base
   def serialization_params
     value = read_attribute :serialization_params
     begin
-      value.nil? ? {} : Marshal.load(value)
+      value.nil? ? {} : YAML.load(value)
     rescue TypeError
       
     end
