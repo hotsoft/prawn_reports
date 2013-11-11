@@ -8,8 +8,6 @@ require File.expand_path(File.dirname(__FILE__) + "/../bands/footers/footer_001.
 module PrawnReport
   class Listing < Report
 
-    #alias :super_new_page :new_page
-
     def initialize(report_params = {})
       super(report_params)
       @header_class = PrawnReport::Header001

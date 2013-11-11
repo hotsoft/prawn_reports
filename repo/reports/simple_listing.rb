@@ -70,6 +70,14 @@ module PrawnReport
       @grouping_info = {:last_group_value => nil,
                         :groups_running => false}
     end
+    
+    def new_page(print_titles = true)
+      super(print_titles)
+      draw_group_header if grouped? and @report_params[:group][:header_reprint_new_page] and !last_group_summary?
+      if print_titles
+        draw_column_titles unless (!draw_group_column_titles? && !@printing_internal) || last_group_summary?
+      end
+    end    
 
     protected
 
@@ -102,14 +110,6 @@ module PrawnReport
 
     def last_group_summary?
       @data_end
-    end
-
-    def new_page(print_titles = true)
-      super(print_titles)
-      draw_group_header if grouped? and @report_params[:group][:header_reprint_new_page] and !last_group_summary?
-      if print_titles
-        draw_column_titles unless (!draw_group_column_titles? && !@printing_internal) || last_group_summary?
-      end
     end
 
     def before_draw_lines
