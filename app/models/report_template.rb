@@ -13,7 +13,7 @@ class ReportTemplate < ActiveRecord::Base
   def serialization_params
     value = read_attribute :serialization_params
     begin
-      value.nil? ? {} : YAML.load(value)
+      value.nil? ? {} : Marshal.load(value)
     rescue TypeError
       
     end
