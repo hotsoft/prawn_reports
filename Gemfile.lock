@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    prawn_report (1.9.8)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  prawn_report!
+
+BUNDLED WITH
+   1.13.0
