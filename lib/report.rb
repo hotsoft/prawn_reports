@@ -70,6 +70,8 @@ module PrawnReport
     
     def draw(data)
       @data = data
+
+      before_draw
       
       draw_header_first_page
       draw_internal
@@ -80,6 +82,9 @@ module PrawnReport
       
       @pdf.close_and_stroke
       @pdf.render
+    end
+
+    def before_draw
     end
     
     def new_page(print_titles = true)
@@ -154,7 +159,7 @@ module PrawnReport
     def run_totals(data_row)
       @running_totals.each do |rt|
         vl = get_raw_field_value(data_row, rt)
-	vl = (vl.is_a? (String) ? vl.to_f : vl)
+        vl = (vl.is_a? (String) ? vl.to_f : vl)
         @totals[rt] = (@totals[rt] || 0) + (vl == '' ? 0 : vl)
         @group_totals[rt] = (@group_totals[rt] || 0) + (vl == '' ? 0 : vl)
       end

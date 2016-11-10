@@ -17,6 +17,7 @@ puts "FIM"
 
 puts "Iniciando importação dos reports"
 Dir.glob("#{Rails.root}/db/reports/*.yml").each do |f|
+  puts "Parsing file: #{f}"
   params = YAML::load(File.open(f, 'r'))
   r = ReportTemplate.find_by_name(params["name"])
   if r.nil?
@@ -42,5 +43,5 @@ Dir.glob("#{Rails.root}/db/reports/*.yml").each do |f|
   end
 end
 ReportTemplate.destroy_all(:excluir => true)
-puts "finishing, closing, and going home"
+puts "FIM"
 

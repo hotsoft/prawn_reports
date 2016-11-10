@@ -4,6 +4,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../../lib/report.rb")
 require File.expand_path(File.dirname(__FILE__) + "/../bands/headers/header_001.rb")
 require File.expand_path(File.dirname(__FILE__) + "/../bands/headers/header_002.rb")
 require File.expand_path(File.dirname(__FILE__) + "/../bands/footers/footer_001.rb")
+require 'iconv'
 
 module PrawnReport
   class Listing < Report
@@ -140,5 +141,62 @@ module PrawnReport
         render_multi_column_title
       end
     end
+
+    def draw_csv(data)
+      @data = data
+
+      before_draw
+
+      if @report_params[:field]
+        @report_params[:columns] = [@report_params[:field]]
+      end
+
+      str = CSV.generate(:col_sep => ";", :encoding => 'utf-8') do |csv|
+        csv << draw_column_titles_csv(csv)
+        @data[@detail_name].each do |row|
+          @current_row = row
+          before_render_line
+          csv << render_line_csv(@current_row, csv)
+          after_render_line
+        end
+      end
+      Iconv.conv('latin1', 'utf-8', str)
+    end
+
+    def render_line_csv(row, csv)
+      fields = []
+      @report_params[:columns].each do |c|
+        unless c[:formatter] == :invisible
+          formatter = c[:formatter] || :none
+          raw_value = get_raw_field_value(row, c[:name].to_s)
+          formatter_options = build_formatter_options(formatter, c)
+          # exceção é currency, deixamos o número sem separador de milhares
+          if formatter == :currency
+            if raw_value.blank?
+              formatted_text = ''
+            elsif raw_value < 0
+              formatted_text = raw_value.to_i.to_s + ',' + ('%02d' % ((raw_value.abs * 100).round % 100))
+            else
+              formatted_text = raw_value.to_i.to_s + ',' + ('%02d' % ((raw_value * 100).round % 100))
+            end
+          else
+            formatted_text = format(raw_value, formatter, formatter_options)
+          end
+          fields << formatted_text
+        end
+      end
+      fields
+    end
+
+    def draw_column_titles_csv(csv)
+      fields = []
+      @report_params[:columns].each do |c|
+        unless c[:formatter] == :invisible
+          fields << c[:title].to_s
+        end
+      end
+      fields
+    end
   end
+
 end
