@@ -159,7 +159,7 @@ module PrawnReport
     def run_totals(data_row)
       @running_totals.each do |rt|
         vl = get_raw_field_value(data_row, rt)
-        vl = (vl.is_a? (String) ? vl.to_f : vl)
+        vl = (vl.is_a?(String) ? vl.to_f : vl)
         @totals[rt] = (@totals[rt] || 0) + (vl == '' ? 0 : vl)
         @group_totals[rt] = (@group_totals[rt] || 0) + (vl == '' ? 0 : vl)
       end
