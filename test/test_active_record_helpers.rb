@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'active_record'
 require File.dirname(__FILE__) + '/../lib/active_record_helpers'
 

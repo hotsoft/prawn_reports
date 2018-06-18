@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CreateAcFilterIncludes < ActiveRecord::Migration
   def self.up
     create_table :ac_filter_includes do |t|

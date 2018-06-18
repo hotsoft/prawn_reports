@@ -1,3 +1,4 @@
+# encoding: utf-8
 class GenerateReportController < PrawnReport.parent_controller.constantize
 
   unloadable

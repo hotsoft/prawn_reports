@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddSerializationParamsToReport < ActiveRecord::Migration
   def self.up
     add_column :report_templates, :serialization_params, :text

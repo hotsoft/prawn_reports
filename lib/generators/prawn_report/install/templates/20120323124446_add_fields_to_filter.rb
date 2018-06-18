@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddFieldsToFilter < ActiveRecord::Migration
   def self.up
     add_column :ac_filters, :filled_criteria_from, :text

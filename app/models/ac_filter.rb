@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AcFilter < ActiveRecord::Base
   belongs_to :ac_filter_def
 

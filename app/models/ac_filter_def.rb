@@ -1,3 +1,4 @@
+# encoding: utf-8
 class AcFilterDef < ActiveRecord::Base
   
   has_many :ac_filters, :dependent => :destroy

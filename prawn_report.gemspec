@@ -1,3 +1,4 @@
+# encoding: utf-8
 Gem::Specification.new do |s|
   s.name        = 'prawn_report'
   s.version     = '1.9.23'

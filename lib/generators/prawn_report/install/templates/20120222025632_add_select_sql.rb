@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddSelectSql < ActiveRecord::Migration
   def self.up
     add_column :ac_filter_defs, :select_sql, :string

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ChangeFilledCriteriaUnfilledCriteria < ActiveRecord::Migration
   def self.up
     remove_column :ac_filters, :filled_criteria

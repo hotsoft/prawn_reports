@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddOrderToFilterDef < ActiveRecord::Migration
   def self.up
     add_column :ac_filter_defs, :order_sql, :string

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddFilledCriteriaToOptions < ActiveRecord::Migration
   def self.up
     add_column :ac_filter_options, :filled_criteria, :text

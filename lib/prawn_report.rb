@@ -1,5 +1,4 @@
-# coding: utf-8
-
+# encoding: utf-8
 
 module PrawnReport
   mattr_accessor :parent_controller

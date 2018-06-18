@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require File.dirname(__FILE__) + '/prawn_report_test_helper'
 require File.dirname(__FILE__) + '/../examples/product_type_break_by_group.rb'
 require File.dirname(__FILE__) + '/../examples/simple_listing_people.rb'

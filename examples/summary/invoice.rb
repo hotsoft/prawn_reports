@@ -1,4 +1,4 @@
-#coding: utf-8
+# encoding: utf-8
 
 #gem style
 #require 'prawn_report.rb'

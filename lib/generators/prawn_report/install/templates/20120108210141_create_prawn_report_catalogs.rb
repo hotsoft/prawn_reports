@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CreatePrawnReportCatalogs < ActiveRecord::Migration
   def self.up
     create_table :report_templates do |t|

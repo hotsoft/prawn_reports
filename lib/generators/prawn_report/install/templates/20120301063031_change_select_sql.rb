@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ChangeSelectSql < ActiveRecord::Migration
   def self.up
     remove_column :ac_filter_defs, :select_sql

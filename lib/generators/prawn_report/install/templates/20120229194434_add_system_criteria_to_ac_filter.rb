@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AddSystemCriteriaToAcFilter < ActiveRecord::Migration
   def self.up
     add_column :ac_filters, :system_criteria, :string

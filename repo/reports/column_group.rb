@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module PrawnReport
   class NoGroupingFieldProvided < Exception; end
   class NoGroupingValueFieldProvided < Exception; end

@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "custom_report_controller"
 
 class CustomGenerateReportController < ApplicationController

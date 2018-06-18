@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module PrawnReport
   class Engine < ::Rails::Engine
     initializer "application_controller.initialize_prawn_report" do

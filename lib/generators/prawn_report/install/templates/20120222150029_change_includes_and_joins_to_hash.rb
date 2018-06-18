@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ChangeIncludesAndJoinsToHash < ActiveRecord::Migration
   def self.up
     drop_table :ac_filter_includes
