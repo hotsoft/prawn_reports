@@ -28,7 +28,7 @@ Dir.glob("#{Rails.root}/db/reports/*.yml").each do |f|
     end
     params["excluir"] = false
     ReportTemplate.create(params)
-    puts "Criado relatório: " + params["name"]    
+    puts "Criado relatório: " + params["name"]
   else
     if params["filter_name"]
       f = AcFilterDef.find_by_name(params.delete("filter_name"))
@@ -38,9 +38,8 @@ Dir.glob("#{Rails.root}/db/reports/*.yml").each do |f|
     end
     params["excluir"] = false
     r.update_attributes(params)
-    puts "Atualizado relatório: " + params["name"]        
+    puts "Atualizado relatório: " + params["name"]
   end
 end
 ReportTemplate.destroy_all(:excluir => true)
 puts "finishing, closing, and going home"
-

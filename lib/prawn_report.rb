@@ -5,8 +5,8 @@ module PrawnReport
   mattr_accessor :parent_controller
   @@parent_controller = "CustomGenerateReportController"
 end
-  
-  
+
+
 require "report"
 require "bands/band"
 require "bands/summary_band"

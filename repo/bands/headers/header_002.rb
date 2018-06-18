@@ -12,7 +12,7 @@ module PrawnReport
   #  font size 12.
   #* Report name based on a parameter named +report_name+ setted in the report
   class Header002 < HeaderBand
-    
+
     def internal_draw
       report.x = 0
       report.text(report.data['company_name'], 300, :font_size => 12)
@@ -21,11 +21,11 @@ module PrawnReport
       report.line_break(12)
       report.horizontal_line
     end
-    
+
     def height
       20
     end
-    
+
   end
-  
+
 end

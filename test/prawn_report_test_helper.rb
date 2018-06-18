@@ -10,7 +10,7 @@ class ReportClassTestHelper
     @params = {}
     @today_is = nil
   end
-  
+
   def with_initializers(initializers)
     @initializers = initializers
     self
@@ -20,17 +20,17 @@ class ReportClassTestHelper
     @params = params
     self
   end
-  
+
   def with_yaml(file_path)
     @data = YAML::load(File.open(file_path))
     self
   end
-  
+
   def assuming_today_as(date_str)
     @today_is = Date.parse(date_str)
     self
   end
-  
+
   def should_result_in_pdf(file_path)
     begin
       expected_content = File.open(file_path, 'r').read
@@ -62,7 +62,7 @@ class ReportClassTestHelper
       return [false, e.to_s + '\n\t' + e.backtrace.join("\n\t")]
     end
   end
-  
+
 end
 
 

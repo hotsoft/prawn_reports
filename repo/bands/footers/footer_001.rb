@@ -10,11 +10,11 @@ module PrawnReport
       report.horizontal_line
       report.x = 0
     end
-    
+
     def self.height
       10
     end
-    
+
   end
-  
+
 end

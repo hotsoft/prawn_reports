@@ -24,7 +24,7 @@ class ActiveRecord::Base
 end
 
 class Array
-  include PrawnReportActiveRecord  
+  include PrawnReportActiveRecord
 end
 
 

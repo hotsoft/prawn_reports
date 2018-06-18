@@ -26,21 +26,21 @@ class InvoiceSummary < PrawnReport::SummaryBand
       report.pdf.line_width = previous_line_width
     end
   end
-  
+
   def height
     40
   end
-  
+
 end
 
 class InvoiceReport < PrawnReport::SimpleListing
-  
+
   def initialize(params = {})
     params.merge!({:running_totals => ['quantity', 'unit_price']})
     super(params)
     @summary_class = InvoiceSummary
     @params = {
-      :report_name => 'Invoice', 
+      :report_name => 'Invoice',
       :columns => [
         {:name => 'product', :title => 'Product', :width => 200},
         {:name => 'quantity', :title => 'Qty.', :width => 30},
@@ -48,7 +48,7 @@ class InvoiceReport < PrawnReport::SimpleListing
       ]
     }
   end
-  
+
 end
 
 data = YAML::load( File.open( File.expand_path(File.dirname(__FILE__) + "/../data/invoice.yml") ) )

@@ -23,7 +23,7 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
+  phone_number: 11-2929-3293
 - name: Marcia Regina
   age: 19
   phone_number: 41-2299-2239
@@ -77,7 +77,7 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
+  phone_number: 11-2929-3293
 - name: Marcia Regina
   age: 19
   phone_number: 41-2299-2239
@@ -131,7 +131,7 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
+  phone_number: 11-2929-3293
 - name: Marcia Regina
   age: 19
   phone_number: 41-2299-2239
@@ -185,7 +185,7 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
+  phone_number: 11-2929-3293
 - name: Marcia Regina
   age: 19
   phone_number: 41-2299-2239
@@ -239,8 +239,8 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
-- name: Marcia Regina
+  phone_number: 11-2929-3293
+- name: https://twitter.com/tecmint?lang=en
   age: 19
   phone_number: 41-2299-2239
 - name: Oscar Niemayer
@@ -293,7 +293,7 @@ items:
   phone_number: 43-7278-1292
 - name: José Saramago
   age: 99
-  phone_number: 11-2929-3293 
+  phone_number: 11-2929-3293
 - name: Marcia Regina
   age: 19
   phone_number: 41-2299-2239
@@ -323,4 +323,4 @@ items:
   phone_number: 41-8812-5221
 - name: Joana Prado
   age: 33
-  phone_number: 21-2399-0101  
+  phone_number: 21-2399-0101

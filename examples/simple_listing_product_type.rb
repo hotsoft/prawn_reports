@@ -12,7 +12,7 @@ class ProductTypeListing < PrawnReport::SimpleListing
   def initialize
     super
     @params = {
-      :report_name => 'Product Type Listing', 
+      :report_name => 'Product Type Listing',
       :field => 'name',
       :title => 'Name'
     }

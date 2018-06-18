@@ -15,28 +15,28 @@ module PrawnReport
   #  tuples of two elements, the first one being the title and second one being the value of the 
   #  filter. If value is present the title is concatenated with ':'
   class Header001 < HeaderBand
-    
+
     def initialize(report, params = {})
       super(report, params)
       @filter_size = 0
     end
-    
-    def internal_draw            
+
+    def internal_draw
       report.text(report.data['company_name'], 300, :style => :bold, :font_size => 16)
       txt_emissao = 'Data de emissão: ' + report.today.strftime('%d/%m/%Y')
       length = report.pdf.width_of(txt_emissao, :size => 12)
       report.x = report.max_width - length
-      report.text(txt_emissao, length, :font_size => 12, 
+      report.text(txt_emissao, length, :font_size => 12,
         :valign => :bottom, :align => :right)
       report.line_break(16)
-      report.text(report.params[:report_name], report.max_width, :font_size => 13, 
+      report.text(report.params[:report_name], report.max_width, :font_size => 13,
          :align => :center)
       report.line_break(13)
       draw_filters if report.params[:filters]
       report.horizontal_line
     end
-    
-    def draw_filters      
+
+    def draw_filters
       report.params[:filters].each do |param|
         title = param[0]
         if param[1].to_s != ''
@@ -51,11 +51,11 @@ module PrawnReport
         @filter_size += size + 2
       end
     end
-    
-    def height      
+
+    def height
       45 + @filter_size
     end
-        
+
   end
-  
+
 end

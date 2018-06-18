@@ -24,11 +24,11 @@ class MySummary < PrawnReport::SummaryBand
       report.pdf.line_width = previous_line_width
     end
   end
-  
+
   def height
     40
   end
-  
+
 end
 
 class MyGroupHeader < PrawnReport::HeaderBand
@@ -37,18 +37,18 @@ class MyGroupHeader < PrawnReport::HeaderBand
     previous_line_width = report.pdf.line_width
     begin
       report.pdf.line_width = 1
-      report.text(report.grouping_info[:last_group_value], report.max_width, 
+      report.text(report.grouping_info[:last_group_value], report.max_width,
         :style => :italic, :align => :center, :font_size => 16)
       report.line_break(16)
     ensure
       report.pdf.line_width = previous_line_width
     end
   end
-  
+
   def height
     20
   end
-  
+
 end
 
 class ProductTypeBreakByGroup < PrawnReport::SimpleListing
@@ -56,12 +56,12 @@ class ProductTypeBreakByGroup < PrawnReport::SimpleListing
     params.merge!({:running_totals => ['quantity']})
     super(params)
     @params = {
-      :report_name => 'Product types', 
+      :report_name => 'Product types',
       :columns => [
         {:name => 'name', :title => 'Name', :width => 200},
         {:name => 'quantity', :title => 'Inventory', :width => 60, :align => :right}
       ],
-      :group => {:field => 'group', :new_page => true, 
+      :group => {:field => 'group', :new_page => true,
                  :header_class => MyGroupHeader, :summary_class => MySummary}
     }
   end
