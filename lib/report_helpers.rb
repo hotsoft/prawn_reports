@@ -12,14 +12,14 @@ module PrawnReport
       @pdf.text_box(label, :size => LABEL_SIZE, :at => [@x + 2, y - 2], :width => width - 2,
           :height => LABEL_SIZE, :valign => :top)
       h_text = height.nil? ? TEXT_SIZE : height - LABEL_SIZE - 4
-      @pdf.text_box(text.to_s.toutf8 || '', { :size => TEXT_SIZE, :at => [@x + 2, y - LABEL_SIZE - 4],
+      @pdf.text_box(text.to_s || '', { :size => TEXT_SIZE, :at => [@x + 2, y - LABEL_SIZE - 4],
           :width => width - 2, :height => h_text, :valign => :top }.merge(options))
       @x += width
     end
 
     def text(text, width, options = {})
       font_size = options[:font_size] || TEXT_SIZE
-      @pdf.text_box(text.to_s.toutf8, :size => font_size, :style => options[:style], :at => [@x, y - 4],
+      @pdf.text_box(text.to_s, :size => font_size, :style => options[:style], :at => [@x, y - 4],
             :width => width, :height => font_size,
             :valign => (options[:valign] || :top),
             :align => (options[:align] || :left)

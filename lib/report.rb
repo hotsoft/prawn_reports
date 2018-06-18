@@ -9,7 +9,7 @@ require File.expand_path(File.dirname(__FILE__) + "/report_info")
 module PrawnReport
   unless defined? DEFAULT_REPORT_PARAMS
     DEFAULT_REPORT_PARAMS = {:page_size => 'A4', :margin => [20, 20, 20, 20],
-      :page_layout => :portrait}
+      :page_layout => :portrait, :encoding => 'utf8'}
 
     LABEL_SIZE = 6
     TEXT_SIZE = 10
