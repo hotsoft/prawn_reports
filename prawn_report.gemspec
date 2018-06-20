@@ -1,7 +1,7 @@
 # encoding: utf-8
 Gem::Specification.new do |s|
   s.name        = 'prawn_report'
-  s.version     = '1.9.27'
+  s.version     = '1.9.28'
   s.licenses    = ['MIT']
   s.summary     = 'Prawn Report makes it easy to create PDF reports.'
   s.description = 'Prawn report is a class repository wich uses prawn gem capabilities to generate PDF documents in order to make it easy to create real life reports.'
