@@ -59,7 +59,11 @@ module PrawnReport
             (value.to_i.to_s.reverse.gsub(/...(?=.)/,'\&.').reverse) + ',' + ('%02d' % ((value * 100).round % 100))
           end
         elsif (formatter == :date)
-          value.to_time.strftime('%d/%m/%Y')
+          begin
+            value.to_time.strftime('%d/%m/%Y') || value.to_time.strftime('%Y/%m/%d')
+          rescue
+            value.to_s
+          end
         elsif (formatter == :timezone_date)
           tz = Time.zone.parse(value)
           tz.nil? ? '' : tz.strftime('%d/%m/%Y')
